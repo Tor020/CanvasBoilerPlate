@@ -1,6 +1,6 @@
 /*	STAND ALONE WORKING EXAMPLE WITH NOTES. COPYING AND PASTING THIS CODE WITH A CANVAS WILL MAKE A CIRCLE THAT RANDOMLY MOVES AROUND SCREEN	*/
 //Canvas Setup 
-window.onload = function () {
+let module = (function () {
 	const canvas = document.getElementById('c');
 
 	let c = canvas.getContext('2d');
@@ -42,6 +42,18 @@ window.onload = function () {
 		// Walls
 		y > h - radius || y < radius ? vy = -vy : vy; //If the circle goes to Top or Bottom of canvas flip to opposite 
 		x > w - radius || x < radius ? vx = -vx : vx; //If the circle goes to Right or Left of canvas flip to opposite 
-	}
+	}debugger
 	animate();
-}
+})(window, document);
+
+
+/*  Module pattern 
+
+  var module = (function () {
+  // private
+  return {
+    // public
+  };
+}());
+
+*/
